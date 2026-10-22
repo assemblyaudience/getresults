@@ -5,7 +5,7 @@ on:
 
 permissions:
   id-token: write
-  content: read
+  contents: read
 
 jobs:
   oidc-test:
@@ -22,3 +22,5 @@ jobs:
       with:
         aws-region: us-east-1
         role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+    - name: Test AWS Credentials
+      run: aws sts get-caller-identity
