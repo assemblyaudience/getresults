@@ -1,7 +1,7 @@
 name: GitHub AWS OIDC
 on: 
   push:
-    branches: ["aws-oidc-test"]
+    branches: ["main"]
 
 permissions:
   id-token: write
@@ -12,6 +12,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment: production
+    secrets: inherit
 
     steps:
     - name: Checkout
@@ -22,5 +23,6 @@ jobs:
       with:
         aws-region: us-east-1
         role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+
     - name: Test AWS Credentials
       run: aws sts get-caller-identity
