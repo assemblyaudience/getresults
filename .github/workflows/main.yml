@@ -33,7 +33,7 @@ jobs:
       uses: aws-actions/aws-lambda-deploy@v1.1.0
       with:
         function-name: getResults2026
-        code-artifacts-dir: ../my_deployment_package
+        code-artifacts-dir: requirements.txt
         handler: lambda_function.lambda_handler
         runtime: python3.12
         # Add any additional inputs this action supports
