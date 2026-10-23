@@ -3,7 +3,6 @@ import json
 
 import boto3
 
-# Let's use Amazon S3
 s3 = boto3.client('s3')
 
 urls_by_locale = ["https://er.ncsbe.gov/enr/20261103/data/results_41.txt?v=22-15-12",
@@ -17,6 +16,8 @@ urls_by_locale = ["https://er.ncsbe.gov/enr/20261103/data/results_41.txt?v=22-15
                   "https://er.ncsbe.gov/enr/20261103/data/results_83.txt?v=22-15-12",
                   "https://er.ncsbe.gov/enr/20261103/data/results_68.txt?v=22-15-12"
                   ]
+
+
 def lambda_handler(event, context):
     response = []
     for i in urls_by_locale:
@@ -26,7 +27,7 @@ def lambda_handler(event, context):
         Body=(bytes(json.dumps(response).encode('UTF-8'))),
         Bucket='election-data-holder-26',
         Key='results.json')
-    # TODO implement
+
     return {
         'statusCode': 200,
         'body': json.dumps(response)
