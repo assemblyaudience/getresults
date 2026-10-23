@@ -25,12 +25,15 @@ jobs:
 
     - name: Test AWS Credentials
       run: aws sts get-caller-identity
+
+    - name: Zip the Lambda function
+      run: zip my_deployment_package.zip lambda_function.py
     
     - name: Deploy Lambda Function
       uses: aws-actions/aws-lambda-deploy@v1.1.0
       with:
         function-name: getResults2026
-        # code-artifacts-dir: my-code-artifacts-dir
-        handler: index.handler
-        runtime: nodejs22.x
+        code-artifacts-dir: ./my_deployment_package
+        handler: lambda_function.lambda_handler
+        runtime: python3.12
         # Add any additional inputs this action supports
