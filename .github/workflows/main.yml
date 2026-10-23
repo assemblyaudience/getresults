@@ -1,7 +1,7 @@
 name: GitHub AWS OIDC
 on: 
   push:
-    branches: [aws-oidc-test]
+    branches: ["aws-oidc-test"]
 
 permissions:
   id-token: write
