@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
     - name: Checkout
       uses: actions/checkout@v5
 
@@ -24,3 +25,12 @@ jobs:
 
     - name: Test AWS Credentials
       run: aws sts get-caller-identity
+    
+    - name: Deploy Lambda Function
+      uses: aws-actions/aws-lambda-deploy@v1.1.0
+      with:
+        function-name: getResults2026
+        code-artifacts-dir: my-code-artifacts-dir
+        handler: index.handler
+        runtime: nodejs22.x
+        # Add any additional inputs this action supports
