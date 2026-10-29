@@ -11,6 +11,7 @@ jobs:
   oidc-test:
     name: Deploy
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
     
