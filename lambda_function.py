@@ -5,11 +5,11 @@ import boto3
 
 s3 = boto3.client('s3')
 
-urls_by_locale = ["https://er.ncsbe.gov/enr/20261103/data/results_41.txt?v=22-15-12",
+urls_by_locale = ["https://er.ncsbe.gov/enr/20261103/data/results_0.txt?v=22-15-12",
                   "https://er.ncsbe.gov/enr/20261103/data/results_92.txt?v=22-15-12",
                   "https://er.ncsbe.gov/enr/20261103/data/results_32.txt?v=22-15-12",
                   "https://er.ncsbe.gov/enr/20261103/data/results_26.txt?v=22-15-12",
-                  "https://er.ncsbe.gov/enr/20261103/data/results_0.txt?v=22-15-12",
+                  "https://er.ncsbe.gov/enr/20261103/data/results_41.txt?v=22-15-12",
                   "https://er.ncsbe.gov/enr/20261103/data/results_9.txt?v=22-15-12",
                   "https://er.ncsbe.gov/enr/20261103/data/results_24.txt?v=22-15-12",
                   "https://er.ncsbe.gov/enr/20261103/data/results_78.txt?v=22-15-12",
